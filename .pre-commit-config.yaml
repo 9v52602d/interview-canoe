@@ -1,0 +1,27 @@
+# We validate the code before the dev commits locally
+repos:
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        files: \.js$
+        exclude: '^node_modules/'
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.23
+    hooks:
+      - id: terraform-fmt
+      - id: terraform-validate
+      - id: tflint
+      - id: shellcheck
+  - repo: local
+    hooks:
+      - id: run-tests
+        name: Run Tests
+        entry: bash -c 'cd app && npm test'
+        language: system
+        pass_filenames: false
+      - id: validate-branch
+        name: Validate Branch Name
+        entry: bash -c 'branch_name=$(git symbolic-ref --short HEAD); if [[ $branch_name =~ ^(feature|hotfix|bugfix)/ ]]; then echo "Branch name is valid."; exit 0; else echo "Error branch name not allowed"; exit 1; fi'
+        language: system
+        pass_filenames: false
