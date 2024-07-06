@@ -20,4 +20,4 @@
 - [INFRASTRUCTURE](infrastructure/infra.md)
 
 ## Diagram
-![Canoe App Diagram](canoe-app-diagram.jpg)
+![Canoe App Diagram](canoe.jpg)
