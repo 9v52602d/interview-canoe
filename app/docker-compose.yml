@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  canoe-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+    restart: unless-stopped
+    # depends_on:
+    #   - db
+
+# In case we need to define a DB locally for developers
+#   db:
+#     image: postgres:14
+#     ports:
+#       - "5432:5432"
+#     environment:
+#       POSTGRES_DB: canoe-db
+#       POSTGRES_USER: canoe-user
+#       POSTGRES_PASSWORD: canoe-pass
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+#     restart: unless-stopped
+
+# volumes:
+#   postgres_data:

@@ -1,0 +1,31 @@
+{
+  "name": "interview-canoe",
+  "version": "1.0.0",
+  "description": "interview project",
+  "main": "canoe-app.js",
+  "scripts": {
+    "test": "mocha",
+    "start:dev": "nodemon canoe-app.js",
+    "start:prod": "node canoe-app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9v52602d/interview-canoe.git"
+  },
+  "author": "@9v52602d",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/9v52602d/interview-canoe/issues"
+  },
+  "homepage": "https://github.com/9v52602d/interview-canoe#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "chai": "^5.1.1",
+    "express": "^4.19.2",
+    "express-winston": "^4.2.0",
+    "mocha": "^10.6.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0",
+    "winston": "^3.13.0"
+  }
+}
