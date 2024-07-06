@@ -9,12 +9,9 @@ services:
       - "3000:3000"
     environment:
       NODE_ENV: production
-    volumes:
-      - .:/app
-      - /app/node_modules
     restart: unless-stopped
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
 
 # In case we need to define a DB locally for developers
 #   db:
