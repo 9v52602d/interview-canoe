@@ -18,11 +18,16 @@ Note: It assumes that the TLS certificate was created and we have the ARN
     ```bash
     docker-compose -f "localstack.docker-compose.yaml" up -d
     ```
-2) Initialize terraform: 
+
+2) Switch to the environment: 
+    ```bash
+    cd dev
+    ```
+3) Initialize terraform: 
     ```bash
     terraform init
     ```
-3) Plan your terraform code:
+4) Plan your terraform code:
     ```bash
     terraform plan -var-file="values.tfvars" 
     ```
